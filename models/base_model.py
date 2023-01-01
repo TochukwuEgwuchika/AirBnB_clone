@@ -11,8 +11,8 @@ class BaseModel:
         self.updated_at = datetime.datetime.now()
 
     def __str__(self):
-        #print string representation of the class
-        print(f"[{self.__class__.__name__}] ({self.id}) self.__dict__")
+        #return string representation of the class
+        return f"[{self.__class__.__name__}] ({self.id}) self.__dict__)"
 
     def save(self):
         #update the object
