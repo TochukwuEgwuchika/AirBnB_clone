@@ -4,11 +4,16 @@ import datetime
 
 class BaseModel:
     #Basemodel class
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         #Initialize the object
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.datetime.now()
-        self.updated_at = datetime.datetime.now()
+        if len(kwargs) != 0:
+            self.id = str(kwargs["id"])
+            self.created_at = datetime.datetime.fromisoformat(kwargs["created_at"])
+            self.updated_at = datetime.datetime.fromisoformat(kwargs["updated_at"])
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.datetime.now()
+            self.updated_at = datetime.datetime.now()
 
     def __str__(self):
         #return string representation of the class
