@@ -16,12 +16,12 @@ class FileStorage:
 
     def save(self):
         #serializes __objects to the JSON file (path: __file_path)
-        with open(__file_path, "w") as f:
+        with open(self.__class__._file_path, "w") as f:
             json.dump(f, self.__class__.__objects)
 
     def reload(self):
         #deserializes the JSON file to __objects (only if the JSON file (__file_path)
         try:
-            self.__class__.__objects = json.load(__file_path)
+            self.__class__.__objects = json.load(self.__class__.__file_path)
         except:
             pass
