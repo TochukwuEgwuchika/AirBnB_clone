@@ -26,7 +26,7 @@ class BaseModel:
 
     def __str__(self):
         #return string representation of the class
-        return f"[{self.__class__.__name__}] ({self.id}) self.__dict__)"
+        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__})"
 
     def save(self):
         #update the object
@@ -37,9 +37,6 @@ class BaseModel:
         #returns dictionary representation of an object
         the_dict = self.__dict__
         the_dict["__class__"] = self.__class__.__name__
-        try:
-            the_dict["created_at"] = the_dict["created_at"].isoformat(sep="T", timespec="auto")
-            the_dict["updated_at"] = the_dict["updated_at"].isoformat(sep="T", timespec="auto")
-        except:
-            pass
+        the_dict["created_at"] = the_dict["created_at"].isoformat(sep="T", timespec="auto")
+        the_dict["updated_at"] = the_dict["updated_at"].isoformat(sep="T", timespec="auto")
         return the_dict
