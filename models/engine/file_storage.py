@@ -17,7 +17,7 @@ class FileStorage:
     def save(self):
         #serializes __objects to the JSON file (path: __file_path)
         f = open(self.__class__.__file_path, "w")
-        json.dump(f, self.__class__.__objects)
+        json.dump(self.__class__.__objects, f)
         f.close()
 
     def reload(self):
