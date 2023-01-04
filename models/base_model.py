@@ -1,6 +1,7 @@
 #BaseModel class definition
 import uuid
 import datetime
+from __init__ import storage
 
 class BaseModel:
     #Basemodel class
@@ -14,6 +15,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.datetime.now()
             self.updated_at = datetime.datetime.now()
+            storage.new(self)
 
     def __str__(self):
         #return string representation of the class
@@ -22,6 +24,7 @@ class BaseModel:
     def save(self):
         #update the object
         self.updated_at = datetime.datetime.now()
+        storage.save()
     
     def to_dict(self):
         #returns dictionary representation of an object
