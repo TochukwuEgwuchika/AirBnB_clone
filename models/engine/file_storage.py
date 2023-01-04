@@ -20,7 +20,7 @@ class FileStorage:
             with open(self.__class__.__file_path, "w") as f:
                 json.dump(f, self.__class__.__objects)
         except:
-            pass
+            return True
 
     def reload(self):
         #deserializes the JSON file to __objects (only if the JSON file (__file_path)
