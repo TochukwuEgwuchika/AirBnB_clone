@@ -37,7 +37,7 @@ class BaseModel:
     
     def to_dict(self):
         #returns dictionary representation of an object
-        the_dict = self.__dict__
+        the_dict = self.__dict__.copy()
         the_dict["__class__"] = self.__class__.__name__
         the_dict["created_at"] = the_dict["created_at"].isoformat(sep="T", timespec="auto")
         the_dict["updated_at"] = the_dict["updated_at"].isoformat(sep="T", timespec="auto")
