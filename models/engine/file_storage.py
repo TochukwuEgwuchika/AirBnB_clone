@@ -7,7 +7,6 @@ parentdir = os.path.dirname(currentdir)
 parentdir = os.path.dirname(parentdir)
 sys.path.insert(0, parentdir)
 
-from models.base_model import BaseModel
 
 class FileStorage:
     #The file storage class
@@ -33,6 +32,7 @@ class FileStorage:
         f.close()
 
     def reload(self):
+        from models.base_model import BaseModel
         #deserializes the JSON file to __objects (only if the JSON file (__file_path)
         if not os.path.isfile(FileStorage.__file_path):
             return
