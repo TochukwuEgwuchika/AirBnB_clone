@@ -1,11 +1,11 @@
 #The definition of the file storage
 import json
-
-import sys, os, inspect
-currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-parentdir = os.path.dirname(currentdir)
-parentdir = os.path.dirname(parentdir)
-sys.path.insert(0, parentdir)
+import os
+#import sys, os, inspect
+#currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+#parentdir = os.path.dirname(currentdir)
+#parentdir = os.path.dirname(parentdir)
+#sys.path.insert(0, parentdir)
 
 
 class FileStorage:
