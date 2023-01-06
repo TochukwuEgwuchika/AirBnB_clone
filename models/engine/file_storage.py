@@ -37,7 +37,7 @@ class FileStorage:
         if not os.path.isfile(FileStorage.__file_path):
             return
         with open(FileStorage.__file_path, "r") as f:
-            objects = json.loads(f)
+            objects = json.load(f)
             FileStorage.__objects = {}
             for key in objects:
                 FileStorage.__objects[key] = BaseModel(**objects[key])
