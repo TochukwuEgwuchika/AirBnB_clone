@@ -16,7 +16,7 @@ class HBNBCommand(cmd.Cmd):
         #quit when EOF is entered
         return True
 
-    def emptyline(self, s):
+    def emptyline(self):
         #when an empty line is entered
         pass
 
