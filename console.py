@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 #contains the entry point of the command interpreter
 
 class HBNBCommand(cmd.Cmd):
