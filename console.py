@@ -8,15 +8,15 @@ class HBNBCommand(cmd.Cmd):
     #console class
     prompt = "(hbnb)"
 
-    def do_quit(self):
+    def do_quit(self, s):
         #quit when quit is entered
         return
 
-    def do_EOF(self):
+    def do_EOF(self, s):
         #quit when EOF is entered
         return
 
-    def emptyline(self):
+    def emptyline(self, s):
         #when an empty line is entered
         pass
 
