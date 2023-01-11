@@ -10,11 +10,11 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, s):
         #quit when quit is entered
-        return
+        return True
 
     def do_EOF(self, s):
         #quit when EOF is entered
-        return
+        return True
 
     def emptyline(self, s):
         #when an empty line is entered
