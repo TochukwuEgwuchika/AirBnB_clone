@@ -12,7 +12,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
 
     class_dict = {
-            "BaseModel" : BaseModel;
+            "BaseModel" : BaseModel
             }
 
     def do_quit(self, tokens):
@@ -28,9 +28,11 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, tokens):
-        if len(tokens.split()) != 2:
+        """create objects of the required class"""
+
+        if len(tokens.split()) == 0:
             print("** class name missing **")
-        elif tokens.split()[1] not in class_dict.keys():
+        elif tokens.split()[0] not in HBNBCommand.class_dict.keys():
             print("** class doesn't exist **")
         else:
             myObj = BaseModel()
