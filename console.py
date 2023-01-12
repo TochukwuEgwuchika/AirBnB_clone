@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
+"""
+console base for the application
+"""
 import cmd
-
-"""contains the entry point of the command interpreter"""
 
 class HBNBCommand(cmd.Cmd):
     """implementation of the cmd class"""
